@@ -52,7 +52,12 @@ requestPayment = () => {
 
             document.getElementById("titleToHide").style.display="none";
             document.getElementById("titleToShow").style.display="block";
-            doneSendingEth();
+
+
+            // UNCOMMENT!!
+            // doneSendingEth();
+
+            
             setTimeout(() => {
                 document.getElementById("toHide").style.display="none";
                 document.getElementById("toShow").style.display="none";
