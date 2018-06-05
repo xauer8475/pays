@@ -47,8 +47,10 @@ var postUpdateZuora = () => {
 
 
 app.use(cors())
+app.use(express.static('public'))
 
-app.get('/', (req, res) => res.send('Hello World!'))
+
+// app.get('/', (req, res) => res.sendFile())
 
 app.post('/updateZuora', (req, res) => {
     postUpdateZuora().then(() => {
@@ -57,4 +59,4 @@ app.post('/updateZuora', (req, res) => {
     })
 })
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+app.listen(3000, () => console.log('Zuora crypto demo listening on port 3000!'))
