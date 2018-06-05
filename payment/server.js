@@ -4,17 +4,12 @@ const cors = require('cors')
 
 const app = express()
 
-var requestPayment = () => {
-  console.log(userWallet);
-  return web3.eth.sendTransaction({from: userWallet, to: "0x5ffe20900419FC29117F203898F89a6bF8f5367a", value: 400000000000232}, console.log)
-};
-
 var bodyData = { "name":"ABC Unlimited",
 "currency":"USD",
 "billToContact":{    "firstName":"Leo", "lastName":"Liu"  },
 "soldToContact":{      "firstName":"Leo",      "lastName":"Liu",      "state":"CA",   "country":"USA" },
 "creditCard":{    "cardType":"Visa",    "cardNumber":"4111111111111111",    "expirationMonth":10,    "expirationYear":2020,    "securityCode":"111"  },
-"subscription":{    "contractEffectiveDate": "2016-10-01",    "termType":"TERMED",    "autoRenew":false,    "initialTerm":12,    "renewalTerm":12,    "subscribeToRatePlans":[      {        "productRatePlanId": "e2c5ed107d009b0eb623a387b41b7b36"      }    ]  } }
+"subscription":{    "contractEffectiveDate": "2016-10-01",    "termType":"TERMED",    "autoRenew":false,    "initialTerm":12,    "renewalTerm":12,    "subscribeToRatePlans":[      {        "productRatePlanId": "e2c5ed1082629d94cbf7fb35f1b738f9"      }    ]  } }
 
 const instance = axios.create({
   baseURL: 'https://rest.apisandbox.zuora.com/v1/',
@@ -26,10 +21,23 @@ const instance = axios.create({
   }
 });
 
+var getSessionCookie = () => {
+    instance.post('/connections').then((res) => {
+        let setCookieVal = res.headers['set-cookie']
+        let cookie = setCookieVal[0]
+        instance.defaults.headers = {
+
+            'Cookie': cookie,
+        };
+    })
+}
+
+getSessionCookie();
+
 var postUpdateZuora = () => {
     return instance.post('/accounts', bodyData)
       .then(function (response) {
-        console.log(response);
+        console.log(response.data.reasons);
         console.log("success")
       })
       .catch(function (error) {
