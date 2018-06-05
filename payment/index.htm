@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="https://demos.creative-tim.com/marketplace/now-ui-kit-pro/assets/img/favicon.png">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-<title>Sections - Now UI Kit Pro by Creative Tim | Premium Bootstrap 4 UI Kit </title>
+<title>Crypto Payment Gateway for Zuora</title>
 
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" name="viewport">
 
@@ -71,7 +71,7 @@
 
 
 		<div class="navbar-translate">
-			<a class="navbar-brand" href="http://demos.creative-tim.com/marketplace/now-ui-kit-pro/presentation.html" rel="tooltip" title="" data-placement="bottom" data-original-title="Designed by Invision. Coded by Creative Tim">
+			<a class="navbar-brand" style="font-size: 1.5em" rel="tooltip" title="" data-placement="bottom" data-original-title="Pay for subscriptions through crypto currency">
 				Crypto Payment Gateway for Zuora
 			</a>
 
@@ -88,21 +88,21 @@
 
         <li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" id="navbarDropdownMenu" href="https://demos.creative-tim.com/marketplace/now-ui-kit-pro/sections.html" data-toggle="dropdown">
-						<i class="now-ui-icons design_app"></i>
-						<p>USD</p>
+						<i class="now-ui-icons"></i>
+						<img src="./img/usd.png" style="padding-right: 5px" /><p style="font-size: 1.5em">USD</p>
 					</a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="https://demos.creative-tim.com/marketplace/now-ui-kit-pro/index.html">
-							<i class="now-ui-icons business_chart-pie-36"></i>
-							Bitcoin
+            <a id="btn_btc" class="dropdown-item" style="font-size: 1.5em>
+							<i class="now-ui-icons"></i>
+							<img src="./img/btc.png" style="padding-right: 5px" />Bitcoin
 						</a>
-            <a class="dropdown-item" href="https://creativetimofficial.github.io/now-ui-kit-pro/#/components?ref=nuk-pro-doc">
-							<i class="now-ui-icons files_single-copy-04"></i>
-							Ethereum
+            <a id="btn_eth" class="dropdown-item" style="font-size: 1.5em>
+							<i class="now-ui-icons"></i>
+							<img src="./img/eth.png" style="padding-right: 5px" />Ethereum
 						</a>
-			<a class="dropdown-item" href="https://creativetimofficial.github.io/now-ui-kit-pro/#/components?ref=nuk-pro-doc">
-							<i class="now-ui-icons files_single-copy-04"></i>
-							Litecoin
+			<a id="btn_ltc" class="dropdown-item" style="font-size: 1.5em>
+							<i class="now-ui-icons"></i>
+							<img src="./img/ltc.png" style="padding-right: 5px" />Litecoin
 					</a>
           </div>
 				</li>
@@ -150,14 +150,14 @@
                 <div class="card card-pricing card-plain">
                     <div class="card-body">
                         <h6 class="category">Enterprise</h6>
-                        <h1 class="card-title"><small>$</small>59</h1>
+                        <h1 id="price1" class="card-title"><small>$</small>599</h1>
                         <ul>
                             <li><b>10GB</b> Disk Space</li>
                             <li><b>100GB</b> Monthly Bandwidth</li>
                             <li><b>20</b> Email Accounts</li>
                             <li><b>Unlimited</b> subdomains</li>
                         </ul>
-                        <a href="https://demos.creative-tim.com/marketplace/now-ui-kit-pro/sections.html#pablo" class="btn btn-primary btn-round">
+                        <a id="payment1" class="btn btn-primary btn-round">
                             Sign Up
                         </a>
                     </div>
@@ -168,7 +168,7 @@
                 <div class="card card-pricing card-background card-raised" style="background-image: url(&#39;assets/img/pricing2.jpg&#39;)">
                     <div class="card-body">
                         <h6 class="category text-info">Professional</h6>
-                        <h1 class="card-title"><small>$</small>29</h1>
+                        <h1 id="price2" class="card-title"><small>$</small>299</h1>
 
                         <ul>
                             <li><b>5GB</b> Disk Space</li>
@@ -176,7 +176,7 @@
                             <li><b>10</b> Email Accounts</li>
                             <li><b>Unlimited</b> subdomains</li>
                         </ul>
-                        <a href="https://demos.creative-tim.com/marketplace/now-ui-kit-pro/sections.html#pablo" class="btn btn-neutral btn-round">
+                        <a id="payment2" class="btn btn-neutral btn-round">
                             Sign Up
                         </a>
                     </div>
@@ -187,7 +187,7 @@
                 <div class="card card-pricing card-plain">
                     <div class="card-body">
                         <h6 class="category">Standard</h6>
-                        <h1 class="card-title"><small>$</small>17</h1>
+                        <h1 id="price3" class="card-title"><small>$</small>179</h1>
 
                         <ul>
                             <li><b>2GB</b> Disk Space</li>
@@ -195,7 +195,7 @@
                             <li><b>5</b> Email Accounts</li>
                             <li><b>Unlimited</b> subdomains</li>
                         </ul>
-                        <a href="https://demos.creative-tim.com/marketplace/now-ui-kit-pro/sections.html#pablo" class="btn btn-primary btn-round">
+                        <a id="payment3" class="btn btn-primary btn-round">
 							Sign Up
 
                         </a>
@@ -292,23 +292,25 @@
 
     $(document).ready(function(){
         // the body of this function is in assets/js/now-ui-kit.js
-        nowuiKit.initContactUsMap();
+        //nowuiKit.initContactUsMap();
+        $( "#btn_btc" ).click(function() {
+          $("#price1").text("0.081 BTC");
+          $("#price2").text("0.040 BTC");
+          $("#price3").text("0.024 BTC");
+        });
+
+        $( "#btn_eth" ).click(function() {
+          $("#price1").text("1.033 ETH");
+          $("#price2").text("0.516 ETH");
+          $("#price3").text("0.308 ETH");
+        });
+
+        $( "#btn_ltc" ).click(function() {
+          $("#price1").text("5.111 LTC");
+          $("#price2").text("2.553 LTC");
+          $("#price3").text("1.527 LTC");
+        });
     });
-
-    // Facebook Pixel Code Don't Delete
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-    document,'script','//connect.facebook.net/en_US/fbevents.js');
-
-    try{
-      fbq('init', '111649226022273');
-      fbq('track', "PageView");
-
-    }catch(err) {
-      console.log('Facebook Track Error:', err);
-    }
 
 </script>
 
