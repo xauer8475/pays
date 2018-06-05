@@ -54,10 +54,9 @@ requestPayment = () => {
             document.getElementById("titleToShow").style.display="block";
 
 
-            // UNCOMMENT!!
-            // doneSendingEth();
+            doneSendingEth();
 
-            
+
             setTimeout(() => {
                 document.getElementById("toHide").style.display="none";
                 document.getElementById("toShow").style.display="none";

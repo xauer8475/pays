@@ -4,10 +4,10 @@ const cors = require('cors')
 
 const app = express()
 
-var bodyData = { "name":"ABC Unlimited",
+var bodyData = { "name":"Stark Enterprise",
 "currency":"USD",
-"billToContact":{    "firstName":"Leo", "lastName":"Liu"  },
-"soldToContact":{      "firstName":"Leo",      "lastName":"Liu",      "state":"CA",   "country":"USA" },
+"billToContact":{    "firstName":"Tony", "lastName":"Stark"  },
+"soldToContact":{      "firstName":"Tony",      "lastName":"Stark",      "state":"NY",   "country":"USA" },
 "creditCard":{    "cardType":"Visa",    "cardNumber":"4111111111111111",    "expirationMonth":10,    "expirationYear":2020,    "securityCode":"111"  },
 "subscription":{    "contractEffectiveDate": "2016-10-01",    "termType":"TERMED",    "autoRenew":false,    "initialTerm":12,    "renewalTerm":12,    "subscribeToRatePlans":[      {        "productRatePlanId": "e2c5ed1082629d94cbf7fb35f1b738f9"      }    ]  } }
 
