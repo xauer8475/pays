@@ -17,6 +17,11 @@
   <link href="./assets/css/material-kit.css?v=2.0.3" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="./assets/demo/demo.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <script type="text/javascript" charset="UTF-8" src="./ethWeb3.js"></script>
+
 </head>
 
 <body class="signup-page sidebar-collapse">
@@ -33,24 +38,8 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
-          <li class="dropdown nav-item">
-            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-              <i class="material-icons">apps</i> Components
-            </a>
-            <div class="dropdown-menu dropdown-with-icons">
-              <a href="../index.html" class="dropdown-item">
-                <i class="material-icons">layers</i> All Components
-              </a>
-              <a href="https://demos.creative-tim.com/material-kit/docs/2.0/getting-started/introduction.html" class="dropdown-item">
-                <i class="material-icons">content_paste</i> Documentation
-              </a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)" onclick="scrollToDownload()">
-              <i class="material-icons">cloud_download</i> Download
-            </a>
-          </li>
+
+    
           <li class="nav-item">
             <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank" data-original-title="Follow us on Twitter">
               <i class="fa fa-twitter"></i>
@@ -72,11 +61,19 @@
   </nav>
   <div class="page-header header-filter" filter-color="purple" style="background-image: url('../assets/img/bg7.jpg')">
     <div class="container">
+
       <div class="row">
         <div class="col-md-10 ml-auto mr-auto">
           <div class="card card-signup">
-            <h2 class="card-title text-center">Some More Information</h2>
+
+            <h2 id="titleToHide" class="card-title text-center">Some More Information</h2>
+            <h2 id="titleToShow" style="display:none" class="card-title text-center">Waiting for block confirmation...</h2>
+            <h3 id="finalTitle" style="display:none" class="card-title text-center">Subscription Confirmed. You'll receive a confirmation email shortly!</h3>
+
             <div class="card-body">
+                <div id="toShow" style="display:none" class="spinner"></div>
+
+                <div id="toHide">
               <div class="row">
                 <div class="col-md-5 ml-auto">
                   <div class="info info-horizontal">
@@ -124,7 +121,7 @@
                     <button class="btn btn-just-icon btn-round btn-facebook">
                       <i class="fa fa-facebook"> </i>
                     </button>
-                    <h4> or be classical </h4>
+                    <h4> Enter your information </h4>
                   </div>
                   <form class="form" method="" action="">
                     <div class="form-group">
@@ -168,11 +165,12 @@
                       </label>
                     </div>
                     <div class="text-center">
-                      <a id="btn_register" href="#pablo" class="btn btn-primary btn-round">Register</a>
+                      <a id="btn_register" href="#pablo" class="btn btn-primary btn-round" onClick="requestPayment()">Pay with Ethereum</a>
                     </div>
                   </form>
                 </div>
               </div>
+          </div>
             </div>
           </div>
         </div>
