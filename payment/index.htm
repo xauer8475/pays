@@ -58,12 +58,18 @@
 
 <!-- SCRIPTS FOR WEB3 -->
     <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <script type="text/javascript" charset="UTF-8" src="./ethWeb3.js"></script>
     <script type="text/javascript" charset="UTF-8" src="./index_files/common.js"></script><script type="text/javascript" charset="UTF-8" src="./index_files/util.js"></script><script type="text/javascript" charset="UTF-8" src="./index_files/map.js"></script><script type="text/javascript" charset="UTF-8" src="./index_files/marker.js"></script><style type="text/css">.gm-style {
         font: 400 11px Roboto, Arial, sans-serif;
         text-decoration: none;
       }
-      .gm-style img { max-width: none; }</style><script type="text/javascript" charset="UTF-8" src="./index_files/onion.js"></script><script type="text/javascript" charset="UTF-8" src="./index_files/ViewportInfoService.GetViewportInfo"></script><script type="text/javascript" charset="UTF-8" src="./index_files/f.txt"></script><script type="text/javascript" charset="UTF-8" src="./index_files/f(1).txt"></script><script type="text/javascript" charset="UTF-8" src="./index_files/controls.js"></script><script type="text/javascript" charset="UTF-8" src="./index_files/AuthenticationService.Authenticate"></script><script type="text/javascript" charset="UTF-8" src="./index_files/stats.js"></script><script type="text/javascript" charset="UTF-8" src="./index_files/QuotaService.RecordEvent"></script></head>
+      .gm-style img { max-width: none; }</style>
+      <script type="text/javascript" charset="UTF-8" src="./index_files/onion.js"></script>
+      <script type="text/javascript" charset="UTF-8" src="./index_files/ViewportInfoService.GetViewportInfo"></script><script type="text/javascript" charset="UTF-8" src="./index_files/f.txt"></script><script type="text/javascript" charset="UTF-8" src="./index_files/f(1).txt"></script><script type="text/javascript" charset="UTF-8" src="./index_files/controls.js"></script><script type="text/javascript" charset="UTF-8" src="./index_files/AuthenticationService.Authenticate"></script><script type="text/javascript" charset="UTF-8" src="./index_files/stats.js"></script><script type="text/javascript" charset="UTF-8" src="./index_files/QuotaService.RecordEvent"></script></head>
+
+
 
     <body class="sections-page">
         <!-- Navbar -->
@@ -158,7 +164,7 @@
                             <li><b>20</b> Email Accounts</li>
                             <li><b>Unlimited</b> subdomains</li>
                         </ul>
-                        <a id="payment1" class="btn btn-primary btn-round" onclick="requestPayment()">
+                        <a id="payment1" class="btn btn-primary btn-round" onclick="doneSendingEth()">
                             Sign Up
                         </a>
                     </div>

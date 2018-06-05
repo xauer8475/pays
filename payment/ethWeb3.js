@@ -26,3 +26,19 @@ requestPayment = () => {
   console.log(userWallet);
   return web3.eth.sendTransaction({from: userWallet, to: "0x5ffe20900419FC29117F203898F89a6bF8f5367a", value: 400000000000232}, console.log)
 };
+
+const instance = axios.create({'baseURL': 'http://localhost:3000'})
+
+// hello = () => {
+//     alert("hello")
+// }
+
+doneSendingEth = () => {
+    instance.post('/updateZuora')
+    .then((res) => {
+        console.log(res)
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+}
