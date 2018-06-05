@@ -2606,8 +2606,8 @@ input.datetimepicker[data-color="yellow"] + .bootstrap-datetimepicker-widget {
         color: #367dff; }
 
 .btn-primary {
-  background-color: #f96332;
-  color: #FFFFFF; }
+  background-color: #9c27b0;
+  color: #FFFFFF !important; }
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary.active:focus, .btn-primary.active:hover,
   .show > .btn-primary.dropdown-toggle,
   .show > .btn-primary.dropdown-toggle:focus,
@@ -3596,9 +3596,9 @@ small {
   font-size: 60%; }
 
 a {
-  color: #f96332; }
+  color: #9c27b0; }
   a:hover, a:focus {
-    color: #f96332; }
+    color: #9c27b0; }
 
 h1, .h1 {
   font-size: 3.5em;
@@ -3819,7 +3819,7 @@ body {
     color: #f96332; }
 
 .nav-pills.nav-pills-primary .nav-item .nav-link.active, .nav-pills.nav-pills-primary .nav-item .nav-link.active:focus, .nav-pills.nav-pills-primary .nav-item .nav-link.active:hover {
-  background-color: #f96332; }
+  background-color: #9c27b0; }
 
 .nav-pills.nav-pills-info .nav-item .nav-link.active, .nav-pills.nav-pills-info .nav-item .nav-link.active:focus, .nav-pills.nav-pills-info .nav-item .nav-link.active:hover {
   background-color: #2CA8FF; }
